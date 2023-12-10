@@ -15,21 +15,14 @@ func main() {
 	roomsOccupied := rand.Intn(totalRooms)
 	roomsAvailable := totalRooms - roomsOccupied
 
-	occupancyRate := (float32(roomsOccupied) / float32(totalRooms)) * 100
-	var occupancyLevel string
-	if occupancyRate > 70 {
-		occupancyLevel = "High"
-	} else if occupancyRate > 20 {
-		occupancyLevel = "Medium"
-	} else {
-		occupancyLevel = "Low"
-	}
+	occupancyRate := occupacyRate(roomsOccupied, totalRooms)
+	occupancyLevel := occupancyLevel(occupancyRate)
 
 	fmt.Println("Hotel:", hotelName)
 	fmt.Println("Number of rooms", totalRooms)
 	fmt.Println("Rooms available", roomsAvailable)
 	fmt.Println("                  Occupancy Level:", occupancyLevel)
-	fmt.Printf("                  Occupancy Rate: %0.2f %%\n", occupancyRate)
+	fmt.Printf("                   Occupancy Rate: %0.2f %%\n", occupancyRate)
 
 	if roomsAvailable > 0 {
 		fmt.Println("Rooms:")
@@ -42,5 +35,26 @@ func main() {
 	} else {
 		fmt.Println("No rooms available for tonight")
 	}
+}
 
+func showRoomDetails(roomNumber, size, nights int) {
+	fmt.Println(roomNumber, ":", size, nights)
+}
+
+func occupancyLevel(occupancyRate float32) string {
+	// 0% - 30% occup: Low
+	// 30% - 60% occup: Medium
+	// 60% - 100% occup:  High
+
+	if occupancyRate > 70 {
+		return "Hight"
+	} else if occupancyRate > 20 {
+		return "Medium"
+	} else {
+		return "Low"
+	}
+}
+
+func occupacyRate(roomsOccupied, totalRooms int) float32 {
+	return (float32(roomsOccupied) / float32(totalRooms)) * 100
 }
