@@ -38,7 +38,7 @@ func main() {
 }
 
 func showRoomDetails(roomNumber, size, nights int) {
-	fmt.Println(roomNumber, ":", size, nights)
+	fmt.Println(roomNumber, ":", size, "people /", nights, " nights ")
 }
 
 func occupancyLevel(occupancyRate float32) string {
@@ -46,11 +46,12 @@ func occupancyLevel(occupancyRate float32) string {
 	// 30% - 60% occup: Medium
 	// 60% - 100% occup:  High
 
-	if occupancyRate > 70 {
+	switch {
+	case occupancyRate > 70:
 		return "Hight"
-	} else if occupancyRate > 20 {
+	case occupancyRate > 20:
 		return "Medium"
-	} else {
+	default:
 		return "Low"
 	}
 }
