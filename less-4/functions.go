@@ -8,6 +8,14 @@ func doOrNot(callback func(int, int) int, s string) int {
 	return result
 }
 
+func totalPrice(initPrice int) func(int) int {
+	sum := initPrice
+	return func(x int) int {
+		sum += x
+		return sum
+	}
+}
+
 func main() {
 	sumCallback := func(n, m int) int {
 		return n + m
@@ -16,13 +24,19 @@ func main() {
 	result := doOrNot(sumCallback, "plus")
 	fmt.Println(result)
 
-	johnPc := computerPrice(3, 5)
-	tomPc := computerPrice(5, 7)
-	alexPc := computerPrice(7, 7)
+	multipleCallback := func(n, m int) int {
+		return n * m
+	}
 
-	fmt.Println(johnPc, tomPc, alexPc)
-}
+	result = doOrNot(multipleCallback, "multiple")
+	fmt.Println(result)
 
-func computerPrice(rate int, power int) int {
-	return rate * power
+	//Closures
+	orderPrice := totalPrice(1)
+	fmt.Println(orderPrice(1))
+	fmt.Println(orderPrice(10))
+	fmt.Println(orderPrice(110))
+	fmt.Println(orderPrice(1110))
+	fmt.Println(orderPrice(11100))
+	fmt.Println(orderPrice(111000))
 }
