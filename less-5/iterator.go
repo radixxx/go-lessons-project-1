@@ -12,7 +12,6 @@ type Point struct {
 func main() {
 	rangeType()
 	anMap()
-
 }
 
 func rangeType() {
