@@ -23,6 +23,7 @@ type DomesticAnimal interface {
 }
 
 func main() {
+	//TODO repeat this topic !
 	var ion Human
 	ion.name = "Ion"
 
