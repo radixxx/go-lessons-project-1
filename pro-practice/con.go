@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math/rand"
 	"os"
+	"runtime"
 	"strconv"
 	"time"
 )
@@ -29,6 +30,8 @@ func main() {
 	A := make(chan int)
 	B := make(chan int)
 
+	getGOMAXPROCS()
+	fmt.Printf("GOMAXPROCS: %d\n", getGOMAXPROCS())
 	go first(n1, n2, A)
 	go second(B, A)
 	third(B)
@@ -70,4 +73,9 @@ func third(in <-chan int) {
 		sum = sum + x2
 	}
 	fmt.Println("The sum of random numbers in %d\n", sum)
+}
+
+func getGOMAXPROCS() int {
+	fmt.Println(runtime.GOMAXPROCS(0))
+	return runtime.GOMAXPROCS(0)
 }
