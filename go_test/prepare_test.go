@@ -13,7 +13,7 @@ import (
 **
 */
 
-func testStringQuantityShort(t *testing.T) {
+func TtestStringQuantityShort(t *testing.T) {
 	if s1("123456789") != 9 {
 		t.Error(`s1("123456789") != 9`)
 	}
@@ -22,7 +22,7 @@ func testStringQuantityShort(t *testing.T) {
 	}
 }
 
-func testStringQuantityLong(t *testing.T) {
+func TtestStringQuantityLong(t *testing.T) {
 	if s2("123456789") != 9 {
 		t.Error(`s2("123456789") != 9`)
 	}
@@ -31,7 +31,7 @@ func testStringQuantityLong(t *testing.T) {
 	}
 }
 
-func testFirst(t *testing.T) {
+func TtestFirst(t *testing.T) {
 	if first(0) != 0 {
 		t.Error(`first(0) != 0`)
 	}
@@ -46,7 +46,7 @@ func testFirst(t *testing.T) {
 	}
 }
 
-func testSecond(t *testing.T) {
+func TtestSecond(t *testing.T) {
 	if second(0) != 0 {
 		t.Error(`second(0) != 0`)
 	}
