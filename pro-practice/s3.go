@@ -40,7 +40,7 @@ func timeHandler(w http.ResponseWriter, r *http.Request) {
 
 	KitchenTime := "Kitcehn time is: "
 	fmt.Fprintf(w, "<h1 align=\"center\">%s</h1>", KitchenTime)
-	fmt.Fprintf(w, "<h2 alieg=\"center\">%s</h2>", g)
+	fmt.Fprintf(w, "<h2 align=\"center\">%s</h2>", g)
 	fmt.Fprintf(w, "Serving time: %s\n", r.URL.Path)
 	fmt.Printf("Serving kitchen time: %s\n", r.Host)
 }
