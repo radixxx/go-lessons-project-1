@@ -1,0 +1,21 @@
++-----------------------------+        +-----------------------------+
+|         gRPC                |        |           HTTP              |
++-----------------------------+        +-----------------------------+
+| Protocol:                   |        | Protocol:                   |
+| gRPC (HTTP/2)               |        | HTTP/1.1 or HTTP/2          |
++-----------------------------+        +-----------------------------+
+| Communication Style:        |        | Communication Style:        |
+| Bidirectional Streaming     |        | Request-Response            |
++-----------------------------+        +-----------------------------+
+| Serialization:              |        | Serialization:              |
+| Protocol Buffers (protobuf)|        | JSON, XML, etc.             |
++-----------------------------+        +-----------------------------+
+| Features:                   |        | Features:                   |
+| - Bidirectional Streaming  |        | - Caching                   |
+| - Multiplexing              |        | - Security (HTTPS)          |
+| - Connection Multiplexing   |        | - Various HTTP Methods      |
++-----------------------------+        +-----------------------------+
+| Use Cases:                  |        | Use Cases:                  |
+| Microservices, Efficient    |        | Web applications, RESTful   |
+| communication               |        | APIs, Interoperability      |
++-----------------------------+        +-----------------------------+
