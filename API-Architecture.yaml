@@ -22,22 +22,22 @@
 
 Comparison between gRPC, SOAP, REST, GraphQL, Webhooks, and WebSockets
 
-+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+
-|       Technology    |        gRPC         |        SOAP         |        REST         |       GraphQL       |      Webhooks       |      WebSockets     |
-+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+
-| Communication Style | Bidirectional RPC   | Request-Response    | Request-Response    | Query Language      | Asynchronous Push   | Full-duplex Channel  |
-|                     | (Streaming support) | (Can support async) | (Stateless)          | for APIs            | on Event Occurrence | for Real-time Data  |
-+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+
-| Message Format      | Protocol Buffers    | XML                 | JSON, XML, others   | JSON                | HTTP Payload        | Framed Messages     |
-+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+
-| Use Cases           | Microservices,      | Enterprise-level    | Web APIs, Mobile    | Flexible APIs       | Event-driven        | Real-time Apps,     |
-|                     | High-performance    | integrations        | applications        | with dynamic queries| notifications       | Chat applications,  |
-|                     | applications, IoT   |                     |                     |                     |                     | Gaming, Collaborative|
-+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+
-| Flexibility         | Schema-driven,      | Strict standards,   | Stateless, flexible | Flexible Schema,    | Event-specific      | Real-time,           |
-|                     | Strong Typing        | XML Schema          | (No predefined      | Client-Defined      | Payload,            | Bi-directional       |
-|                     |                     |                     | structure required) | Queries             | No standardization  | Communication        |
-+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+
-| Protocol Overhead   | Compact, Efficient   | XML overhead,      | Lightweight, HTTP   | Over-fetching/      | Small Payloads,     | Protocol Overhead   |
-|                     | Binary Encoding      | verbose             | overhead, Stateless | Under-fetching       | Efficient           | (Framing, Headers)  |
-+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+
++---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+-----------------------+
+|       Technology    |        gRPC         |        SOAP         |        REST         |       GraphQL       |      Webhooks       |      WebSockets       |
++---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+-----------------------+
+| Communication Style | Bidirectional RPC   | Request-Response    | Request-Response    | Query Language      | Asynchronous Push   | Full-duplex Channel   |
+|                     | (Streaming support) | (Can support async) | (Stateless)          | for APIs           | on Event Occurrence | for Real-time Data    |
++---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+-----------------------+
+| Message Format      | Protocol Buffers    | XML                 | JSON, XML, others   | JSON                | HTTP Payload        | Framed Messages       |
++---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+-----------------------+
+| Use Cases           | Microservices,      | Enterprise-level    | Web APIs, Mobile    | Flexible APIs       | Event-driven        | Real-time Apps,       |
+|                     | High-performance    | integrations        | applications        | with dynamic queries| notifications       | Chat applications,    |
+|                     | applications, IoT   |                     |                     |                     |                     | Gaming, Collaborative |
++---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+-----------------------+
+| Flexibility         | Schema-driven,      | Strict standards,   | Stateless, flexible | Flexible Schema,    | Event-specific      | Real-time,            |
+|                     | Strong Typing        | XML Schema          | (No predefined      | Client-Defined     | Payload,            | Bi-directional        |
+|                     |                     |                     | structure required) | Queries             | No standardization  | Communication         |
++---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+-----------------------+
+| Protocol Overhead   | Compact, Efficient   | XML overhead,      | Lightweight, HTTP   | Over-fetching/      | Small Payloads,     | Protocol Overhead     |
+|                     | Binary Encoding      | verbose             | overhead, Stateless | Under-fetching     | Efficient           | (Framing, Headers)    |
++---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+-----------------------+
