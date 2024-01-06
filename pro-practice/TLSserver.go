@@ -27,7 +27,8 @@ func main() {
 	}
 
 	srv := &http.Server{
-		Addr:      PORT,
+		Addr: PORT,
+		//TODO : update + fix !
 		Handler:   &handler{},
 		TLSConfig: cfg,
 	}
