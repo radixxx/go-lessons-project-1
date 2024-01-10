@@ -1,0 +1,11 @@
+| Protocol                                   | Description                                                 | Encryption                   | Port      | Usage                                        |
+|--------------------------------------------|-------------------------------------------------------------|------------------------------|-----------|----------------------------------------------|
+| HTTP (Hypertext Transfer Protocol)         | Foundation of web data communication.                       | No                           | 80        | Web browsing, information retrieval.         |
+| HTTPS (Hypertext Transfer Protocol Secure) | Secure version of HTTP with encryption.                     | Yes (SSL/TLS)                | 443       | Secure transactions, online banking.         |
+| TLS (Transport Layer Security)             | Secures communication over a network.                       | Yes                          | -         | Used with HTTPS, email, and other protocols. |
+| TCP (Transmission Control Protocol)        | Reliable, ordered, and error-checked data transfer.         | No (inherently reliable)     | -         | File transfer, web browsing.                 |
+| UDP (User Datagram Protocol)               | Connectionless and lightweight communication.               | No (unreliable)              | -         | Real-time applications, streaming.           |
+| FTP (File Transfer Protocol)               | Standard protocol for file transfers.                       | Yes (optional)               | 21        | File uploads and downloads.                  |
+| SMTP (Simple Mail Transfer Protocol)       | Used for sending emails between servers.                    | No (often combined with TLS) | 25        | Email communication.                         |
+| WebSocket                                  | Enables full-duplex communication over a single connection. | Yes                          | 80, 443   | Real-time applications, chat, gaming.        |
+|--------------------------------------------|-------------------------------------------------------------|------------------------------|-----------|----------------------------------------------|
