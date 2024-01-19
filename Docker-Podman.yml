@@ -1,0 +1,80 @@
+Docker-Podman
+
+==================================================================PODMAN==================================================================
+
+# INFO
+podman --help # podman images # view local images
+podman <command> --help # info about commnad 
+ 
+# WORKING WITH IMAGES
+podman search nginx # search for images using the "nginx" keyword
+ 
+podman pull ubuntu # downloading the latest version (default tag latest) of the official ubuntu image (publisher not specified) from the default repository docker.io/library
+podman pull quay.io/bitnami/nginx:latest # downloading the latest version of the nginx image from the publisher bitnami from the repository quay.io/bitnami
+podman pull docker.io/library/ubuntu:18.04 # downloading the official ubuntu image with the 18.04 tag from the docker.io repository
+ 
+# VIEWING LOCAL IMAGES
+podman images 
+ 
+podman rmi <image_name>:<tag> # deleting the image. Instead of <image_name>:<tag> you can specify <image_id>. To delete an image, all containers based on it must be stopped at least
+podman rmi --all # deleting all images
+ 
+# WORKING WITH CONTAINERS
+podman run hello-world # Hello, world! "01001000 01000101 01001100 01001100 01001111"
+podman run -it ubuntu bash # starting ubuntu container and running bash command interactively
+podman run --detach --name nginx --publish 9090:8080 quay.io/bitnami/nginx:1.20.2 # запуск контейнера nginx с отображением (маппингом) порта 9090 хоста на порт 8080 внутрь контейнера
+podman run --detach --name mongodb docker.io/library/mongo:4.4.10 # running a mongodb container named mongodb in the background. The data will be deleted when the container is deleted!
+ 
+# BASIC 
+podman ps # viewing running containers
+podman ps -a # viewing all containers (including stopped ones)
+podman stats --no-stream # viewing statistics. If the user does not have root access, then you need to switch to cgroups v2
+ 
+podman create alpine # creating a container from an alpine image
+ 
+podman start <container_name> # launch the created container. Instead of <container_name> you can specify <container_id>
+podman start --all # launch all created containers
+ 
+podman stop <container_name> # stopping the container. Instead of <container_name> you can specify <container_id>
+podman stop --all # stopping all containers
+ 
+podman rm <container_name> # removing the container. Instead of <container_name> you can specify <container_id>
+podman rm --all # deleting all containers
+ 
+# SYSTEM
+podman system info # general information about the system
+podman system df # used disk space
+podman system prune -af # deleting unused data and disk cleanup
+
+
+=================================================================DOCKER==================================================================
+
+# INFO
+docker <command> --help
+ 
+# COMMIT
+# launching the container from the ubuntu image in interactive mode, installing the ping utility and committing the image under the name ubuntu-ping:20.04
+docker run -it --name ubuntu-ping ubuntu:20.04 bash
+apt update && apt install -y iputils-ping
+exit
+docker commit ubuntu-ping ubuntu-ping:20.04
+docker images
+ 
+# DOCKERFILE
+# creating a declarative Dockerfile
+FROM ubuntu:20.04
+RUN apt-get update && apt-get install -y iputils-ping
+ 
+# BUILD 
+# running the build command from the directory with the Dockerfile to create an image simust/ubuntu-ping:20.04
+docker build -t ubuntu-ping:20.04 .
+docker images
+ 
+# TAG, LOGIN, PUSH
+# creating from a local image ubuntu-ping:20.04 a tag with a repository for the publisher simust
+docker tag ubuntu-ping:20.04 simust/ubuntu-ping:20.04
+docker images
+
+# Login to the docker.io repository under the user simust and upload the image
+docker login -u simust docker.io
+docker push simust/ubuntu-ping:20.04
