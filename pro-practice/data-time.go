@@ -20,6 +20,8 @@ func main() {
 	fmt.Println("%s\n", nowChi)
 
 	comparision()
+	timeElapsecedTime()
+	iteration()
 
 	fmt.Println(time.Now().Format(time.RFC1123))
 	fmt.Println(time.Now().Format(time.RFC3339))
@@ -34,7 +36,7 @@ func timeElapsecedTime() {
 
 	end := time.Now()
 	elapsed := end.Sub(start)
-	fmt.Println("process took %s", elapsed)
+	fmt.Printf("process took %s", elapsed)
 }
 
 func comparision() {
@@ -45,9 +47,8 @@ func comparision() {
 
 	firstFebruary1990 := time.Date(1990, 2, 1, 0, 0, 0, 0, location)
 
-	timeToParse := "2024-02-02 15:10:35.264477 -0600 CST"
-	t, err := time.Parse("2007-01-02T15:04-07:00", timeToParse)
-	//TODO Fix this error !
+	timeToParse := "2019-02-15T07:33-02:00"
+	t, err := time.Parse("2006-01-02T15:04-07:00", timeToParse)
 	if err != nil {
 		panic(err)
 	}
@@ -63,4 +64,18 @@ func comparision() {
 	now = now.Add(time.Minute * 5)
 	now = now.Add(time.Microsecond * 5)
 	now = now.Add(time.Millisecond * 5)
+}
+
+func iteration() {
+	start, err := time.Parse("2006-01-02", "2022-02-19")
+	if err != nil {
+		panic(err)
+	}
+	end, err := time.Parse("2006-01-02", "2024-07-17")
+	if err != nil {
+		panic(err)
+	}
+	for i := start; i.Unix() < end.Unix(); i = i.AddDate(0, 0, 1) {
+		fmt.Println(i.Format(time.RFC3339))
+	}
 }
