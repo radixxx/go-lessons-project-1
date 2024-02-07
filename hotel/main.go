@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"thisIsATest/occupancy"
-	"thisIsATest/room"
+	"thisIsATest/hotel/occupancy"
+	"thisIsATest/hotel/room"
 )
 
 func init() {
