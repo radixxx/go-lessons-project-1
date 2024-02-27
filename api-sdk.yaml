@@ -1,0 +1,18 @@
+API:
+1.An API is a set of rules and protocols that allows different software applications and services to communicate with each other.
+
+2.It defines how software components should interact.
+
+3.Facilitates data exchange and functionality access between software components.
+
+4.Typically consists of endpoints, requests, and responses.
+
+SDK:
+1.An SDK is a comprehensive package of tools, libraries, sample code, and documentation that assists developers 
+  in building applications for a particular platform, framework, or hardware.
+
+2.Offers higher-level abstractions, simplifying development for a specific platform.
+
+3.SDK can applied(Tailored) to specific platforms or frameworks, ensuring compatibility and optimal performance on that platform.
+
+4.Offer access to advanced features and capabilities specific to the platform, which might be otherwise challenging to implement from scratch.
