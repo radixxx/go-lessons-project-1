@@ -1,0 +1,33 @@
+Linux File System 
+
+/ (Root): The foundational directory where all other directories and files are organized.
+
+/bin: Home to essential binary executables, critical for system repair and single-user mode.
+
+/boot: The storage room for all the files needed to boot up your Linux OS, including the kernel.
+
+/dev: Represents your hardware with device nodes and files, the interface for peripherals and components.
+
+/etc: The administrative heart of your system, holding all the configuration files for system and apps.
+
+/home: Users' personal space on Linux, with individual directories for everyone.
+
+/lib: The library containing shared libraries, essential for the booting process and running system commands.
+
+/media: The go-to mount point for all your removable media, like USB sticks and CDs.
+
+/mnt: A temporary parking spot for filesystems and devices when you mount them manually.
+
+/opt: The place for all optional and additional third-party software.
+
+/proc: A dynamic pseudo-filesystem that's all about processes and kernel information, displayed as files.
+
+/root: The private chamber for the root user, separate from /home for heightened security.
+
+/sbin: Contains binaries for system administration, mostly off-limits to the average user.
+
+/tmp: A temporary holding area for files in use by applications and the system.
+
+/usr: A larger collection of user utilities and applications, including program directories.
+
+/var: The variable section, where logs, databases, and other dynamic files are stored.
