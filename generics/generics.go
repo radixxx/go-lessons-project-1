@@ -1,17 +1,15 @@
-func containsUint8(needle uint8, haystack []uint8) bool {
-	for _, v := range haystack {
-		if v == needle {
-			return true
-		}
+package main
+
+func max(a, b int64) int64 {
+	if a > b {
+		return a
 	}
-	return false
+	return b
 }
 
-func containsInt(needle int, haystack []int) bool {
-	for _, v := range haystack {
-		if v == needle {
-			return true
-		}
+func maxGenerec[T constraints.Ordered](a, b T) T {
+	if a > b {
+		return a
 	}
-	return false
+	return b
 }
