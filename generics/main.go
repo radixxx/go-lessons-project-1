@@ -6,5 +6,5 @@ import (
 
 func main() {
 	var a, b int64 = 42, 23
-	fmt.Println(max(a, b))
+	fmt.Println(maxGeneric(a, b))
 }

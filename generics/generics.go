@@ -1,13 +1,11 @@
 package main
 
-func max(a, b int64) int64 {
-	if a > b {
-		return a
-	}
-	return b
-}
+import (
+	"golang.org/x/exp/constraints"
+)
 
-func maxGenerec[T constraints.Ordered](a, b T) T {
+// Note that the identifier of the type parameter is positioned before the type constraint -.
+func maxGeneric[T constraints.Ordered](a, b T) T {
 	if a > b {
 		return a
 	}
