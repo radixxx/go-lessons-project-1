@@ -41,3 +41,23 @@ func existsInSliceGen[T comparable](val T, values []T) bool {
 
 	return false
 }
+
+// ============ Another example =============
+
+type CustomConstraint interface {
+	int | string
+}
+
+func Add(num1, num2 interface{}) interface{} {
+	switch num1.(type) {
+	case int:
+		return num1.(int) + num2.(int)
+	}
+	return nil
+}
+
+func Dd[T int | string | float64 | CustomConstraint](num1 T, num2 T) {}
+
+func Zdd[T any](a, b T) T {
+	return b
+}
